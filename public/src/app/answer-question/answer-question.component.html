@@ -1,0 +1,32 @@
+<a href="/questions">Home</a> | <a href='' (click)='cancel()'>Go Back to Question</a>
+<div class="question">
+    <h1>{{question.question}}</h1>
+    <h5>{{question.description}}</h5>
+</div>
+
+<h1>Add A Answer</h1>
+<form (submit)='onSubmit()'
+#formData = 'ngForm'>
+  <p>
+    Your Answer:
+    <br>
+    <textarea rows="4" cols="50"
+    name="response"
+    required
+    minlength="5"
+    [(ngModel)]='answer.response'
+    #response="ngModel">
+    </textarea>
+  </p>
+  <p>
+    Supporting Details(Optional):
+    <br>
+    <textarea rows="4" cols="50"
+    name="support"
+    [(ngModel)]='answer.support'
+    #description="ngModel">
+    </textarea>
+  </p>
+  <button (click)='cancel()'>Cancel</button>
+  <input type="submit" value="Submit" [disabled]='!formData.valid'>
+</form>

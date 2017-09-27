@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Hello {{user}}!</h1>
+  <a href='/newQuestion'>Add A question</a>
+  <div class="questions">
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Answers</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let question of questions'>
+          <td>{{question.question}}</td>
+          <td>{{question.answers.length}}</td>
+          <td><a href="/question/{{question._id}}">Show</a> | <a href="/question/{{question._id}}/newAnswer">Answer</a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

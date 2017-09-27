@@ -1,0 +1,14 @@
+<a href="/questions">Home</a> | <a [routerLink]="['newAnswer']">Answer this Question</a>
+<div class="question">
+  <h1>Question: {{question. question}}</h1>
+  <h5>Description: {{question.description}}</h5>
+</div>
+<div id="answers" *ngIf='question.answers !== undefined'>
+  <div class="answer" *ngFor='let answer of question.answers'>
+    <h4>Answer: {{answer.response}}</h4>
+    <p>Supporting Details: {{answer.support}}</p>
+    <p>{{answer.likes}} likes</p> <button (click)='like(answer._id)'>Like!</button>
+  </div>
+</div>
+
+

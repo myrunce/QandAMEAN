@@ -1,0 +1,18 @@
+<div class="main">
+  <h1>Q & A</h1>
+  <div class="center">
+    <form (submit)='onSubmit()'
+    #formData = 'ngForm'>
+      <p>
+        Name:
+        <input type="text"
+        name='name'
+        required
+        [(ngModel)] = 'user'
+        #name = 'ngModel'>
+      </p>
+      <br>
+      <input type="submit" value="Enter" [disabled]='!formData.valid'>
+    </form>
+  </div>
+</div>

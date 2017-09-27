@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Add A Question</h1>
+  <form (submit)='onSubmit()'
+  #formData = 'ngForm'>
+    <p>
+      Question:
+      <br>
+      <textarea rows="4" cols="50"
+      name="theQuestion"
+      required
+      minlength="10"
+      [(ngModel)]='question.question'
+      #theQuestion="ngModel">
+      </textarea>
+    </p>
+    <p>
+      Description(Optional):
+      <br>
+      <textarea rows="4" cols="50"
+      name="description"
+      [(ngModel)]='question.description'
+      #description="ngModel">
+      </textarea>
+    </p>
+    <button (click)='cancel()'>Cancel</button>
+    <input type="submit" value="Submit" [disabled]='!formData.valid'>
+  </form>
+</div>
